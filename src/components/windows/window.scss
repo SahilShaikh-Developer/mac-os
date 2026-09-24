@@ -7,6 +7,13 @@
    color: rgb(167, 165, 165);
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    font-weight: 500;
+   transform-origin: center;
+   animation: window-open 180ms ease-out both;
+
+   &.window--closing{
+      pointer-events: none;
+      animation: window-close 180ms ease-in forwards;
+   }
 
     .nav{
 
@@ -40,9 +47,11 @@
             }
          .yellow{
                 background-color: rgb(247,247,81);
+                cursor: default;
             }
          .green{
                 background-color: rgb(27,228,0);
+                cursor: default;
             }
 
             
@@ -72,4 +81,28 @@
         background-color: rgb(205, 197, 197);
         cursor: default;
      }
+}
+
+@keyframes window-open{
+   from{
+      opacity: 0;
+      transform: scale(0.94);
+   }
+
+   to{
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+@keyframes window-close{
+   from{
+      opacity: 1;
+      transform: scale(1);
+   }
+
+   to{
+      opacity: 0;
+      transform: scale(0.94);
+   }
 }

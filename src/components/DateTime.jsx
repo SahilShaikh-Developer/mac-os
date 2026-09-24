@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const formatDateTime = (date) => {
   const weekday = date.toLocaleDateString('en-US', { weekday: 'short' }).toLowerCase()

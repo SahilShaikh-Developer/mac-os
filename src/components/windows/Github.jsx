@@ -1,4 +1,3 @@
-import React from 'react'
 import MacWindow from './MacWindow'
 import GithubData from '../../assets/github.json'
 import './github.scss'
@@ -29,9 +28,9 @@ const GitCard = ({data = {id:1,image:'',title:'',description:'',tags:[],repolink
 
 }
 
-const Github = ({ windowName, windowsState, setWindowsState }) => {
+const Github = ({ windowName, focusedWindow, setFocusedWindow, minimized, setMinimizedState, windowsState, setWindowsState, geometry, onGeometryChange, closing, onClose }) => {
   return (
-    <MacWindow windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}>
+    <MacWindow title="Projects" windowName={windowName} focusedWindow={focusedWindow} setFocusedWindow={setFocusedWindow} minimized={minimized} setMinimizedState={setMinimizedState} windowsState={windowsState} setWindowsState={setWindowsState} geometry={geometry} onGeometryChange={onGeometryChange} closing={closing} onClose={onClose}>
 
         <div className="cards">
             {GithubData.map(project =>{
